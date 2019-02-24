@@ -35,13 +35,13 @@ end
 
 def show(data)
   keys = data.keys
+  nocpp = (keys-[:cpp])
   puts( "|θ|" + keys.map{ |k| k.to_s+"|" }.join )
   puts( "|:--|" + keys.map{ ":--:|" }.join )
   fmt = "%.3g"
   data[:cpp].size.times do |ix|
     cppval = fmt % data[:cpp][ix]
-    row = keys.map{ |k| data[k][ix] }
-    s = "|2**#{ix+1}|#{cppval}|" + (keys-[:cpp]).map{ |k|
+    s = "|2**#{ix+1}|#{cppval}|" + nocpp.map{ |k|
       strong( cppval, fmt % data[k][ix] )+"|"
     }.join
     puts s
