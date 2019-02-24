@@ -57,3 +57,6 @@ Layout/EmptyLineAfterGuardClause:
 
 Style/FormatString:
   Enabled: false
+
+Style/PercentLiteralDelimiters:
+  Enabled: false
